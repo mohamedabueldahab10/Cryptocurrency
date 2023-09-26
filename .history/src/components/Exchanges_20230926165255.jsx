@@ -11,17 +11,16 @@ const { Panel } = Collapse;
 
 const Exchanges = () => {
   const { data, isFetching } = useGetExchangesQuery();
-  const exchangesList = data?.data?.currencies;
-  console.log(data);
+  const exchangesList = data?.data?.exchanges;
   if (isFetching) return <Loader />;
 
   return (
     <>
       <Row>
-        <Col style={{marginInline:"15px"}} span={5}>ID</Col>
-        <Col style={{marginInline:"15px"}} span={5}>24h Trade Icon</Col>
-        <Col style={{marginInline:"15px"}} span={5}>Markets Currency</Col>
-        <Col style={{marginInline:"15px"}} span={5}>Type</Col>
+        <Col span={6}>Exchanges</Col>
+        <Col span={6}>24h Trade Volume</Col>
+        <Col span={6}>Markets</Col>
+        <Col span={6}>Change</Col>
       </Row>
       <Row>
          {exchangesList?.map((exchange) => (
@@ -32,16 +31,14 @@ const Exchanges = () => {
                 showArrow={false}
                 header={(
                   <Row key={exchange.uuid}>
-                    <Col span={5}>
-                      <Text><strong>{exchange.uuid}.</strong></Text>
-                    </Col>
                     <Col span={6}>
+                      <Text><strong>{exchange.rank}.</strong></Text>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
                       <Text><strong>{exchange.name}</strong></Text>
                     </Col>
-                    <Col span={6}>${millify(exchange.symbol)}</Col>
-                    <Col span={5}>{millify(exchange.type)}</Col>
-                    {/* <Col span={6}>{millify(exchange.marketShare)}%</Col> */}
+                    <Col span={6}>${millify(exchange.volume)}</Col>
+                    <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
+                    <Col span={6}>{millify(exchange.marketShare)}%</Col>
                   </Row>
                   )}
               >

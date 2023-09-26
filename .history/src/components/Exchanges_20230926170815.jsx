@@ -32,7 +32,7 @@ const Exchanges = () => {
                 showArrow={false}
                 header={(
                   <Row key={exchange.uuid}>
-                    <Col span={5}>
+                    <Col span={5} style={{backgroundColor:"#ccc"}}>
                       <Text><strong>{exchange.uuid}.</strong></Text>
                     </Col>
                     <Col span={6}>

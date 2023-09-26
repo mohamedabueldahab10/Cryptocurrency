@@ -18,10 +18,10 @@ const Exchanges = () => {
   return (
     <>
       <Row>
-        <Col style={{marginInline:"15px"}} span={5}>ID</Col>
-        <Col style={{marginInline:"15px"}} span={5}>24h Trade Icon</Col>
-        <Col style={{marginInline:"15px"}} span={5}>Markets Currency</Col>
-        <Col style={{marginInline:"15px"}} span={5}>Type</Col>
+        <Col style={{marginInline:"10px"}} span={5}>ID</Col>
+        <Col style={{marginInline:"10px"}} span={5}>24h Trade Icon</Col>
+        <Col style={{marginInline:"10px"}} span={5}>Markets Currency</Col>
+        <Col style={{marginInline:"10px"}} span={5}>Type</Col>
       </Row>
       <Row>
          {exchangesList?.map((exchange) => (

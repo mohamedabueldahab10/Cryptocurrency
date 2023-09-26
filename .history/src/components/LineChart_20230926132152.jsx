@@ -39,8 +39,10 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     ],
   };
 
-  const options = {   
-    responsive: true,
+  const options = {
+    plugins: {
+      legend: true,
+    },
     scales: {
       y: [
         {

@@ -2,20 +2,8 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Col, Row, Typography } from 'antd';
-import {
-  Chart as ChartJs,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-} from 'chart.js'
-ChartJs.register(
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement
-)
 const { Title } = Typography;
+
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
   const coinTimestamp = [];
@@ -39,10 +27,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     ],
   };
 
-  const options = {   
-    responsive: true,
+  const options = {
     scales: {
-      y: [
+      yAxes: [
         {
           ticks: {
             beginAtZero: true,

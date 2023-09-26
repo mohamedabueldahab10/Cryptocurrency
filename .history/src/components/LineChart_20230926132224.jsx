@@ -39,8 +39,8 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     ],
   };
 
-  const options = {   
-    responsive: true,
+  const options = {
+    
     scales: {
       y: [
         {

@@ -18,7 +18,7 @@ const Exchanges = () => {
   return (
     <>
       <Row>
-        <Col style={{marginInline:"15px"}} span={5}>ID</Col>
+        <Col  style={{marginInline:"15px"}} span={5}>ID</Col>
         <Col style={{marginInline:"15px"}} span={5}>24h Trade Icon</Col>
         <Col style={{marginInline:"15px"}} span={5}>Markets Currency</Col>
         <Col style={{marginInline:"15px"}} span={5}>Type</Col>
@@ -32,7 +32,7 @@ const Exchanges = () => {
                 showArrow={false}
                 header={(
                   <Row key={exchange.uuid}>
-                    <Col span={5}>
+                    <Col span={5} style={{backgroundColor:"#ccc"}}>
                       <Text><strong>{exchange.uuid}.</strong></Text>
                     </Col>
                     <Col span={6}>

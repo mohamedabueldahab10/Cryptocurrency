@@ -18,10 +18,10 @@ const Exchanges = () => {
   return (
     <>
       <Row>
-        <Col style={{marginInline:"15px"}} span={5}>ID</Col>
-        <Col style={{marginInline:"15px"}} span={5}>24h Trade Icon</Col>
-        <Col style={{marginInline:"15px"}} span={5}>Markets Currency</Col>
-        <Col style={{marginInline:"15px"}} span={5}>Type</Col>
+        <Col content='center' span={6}>ID</Col>
+        <Col span={6}>24h Trade Currency</Col>
+        <Col span={6}>Markets</Col>
+        <Col span={6}>Change</Col>
       </Row>
       <Row>
          {exchangesList?.map((exchange) => (
@@ -32,15 +32,17 @@ const Exchanges = () => {
                 showArrow={false}
                 header={(
                   <Row key={exchange.uuid}>
-                    <Col span={5}>
+                    <Col span={6}>
                       <Text><strong>{exchange.uuid}.</strong></Text>
                     </Col>
                     <Col span={6}>
+                    </Col>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
+                    <Col span={6}>
                       <Text><strong>{exchange.name}</strong></Text>
                     </Col>
-                    <Col span={6}>${millify(exchange.symbol)}</Col>
-                    <Col span={5}>{millify(exchange.type)}</Col>
+                    <Col span={3}>${millify(exchange.symbol)}</Col>
+                    <Col span={3}>{millify(exchange.type)}</Col>
                     {/* <Col span={6}>{millify(exchange.marketShare)}%</Col> */}
                   </Row>
                   )}
